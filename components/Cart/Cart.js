@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import cartContext from "../../store/cart.context";
+import cartContext from "../../store/cart-context";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
@@ -12,7 +12,9 @@ const Cart = (props) => {
   const cartItemAddHandler = (item) => {
     cartCtx.addItem(item);
   };
-  const cartItemRemoveHandler = (id) => {};
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
